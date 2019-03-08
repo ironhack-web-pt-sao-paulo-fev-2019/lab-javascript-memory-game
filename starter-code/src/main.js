@@ -96,7 +96,8 @@ var cards = [{
   }
 ];
 
-window.addEventListener('load', function () {
+
+window.addEventListener('load', function(){
 
   var memoryGame = new MemoryGame(cards);
   var first, secc, cont = 0;
@@ -113,6 +114,7 @@ window.addEventListener('load', function () {
 
   // Add all the div's to the HTML
   if (document.querySelector('#memory_board')) {
+
     document.querySelector('#memory_board').innerHTML = html;
   }
 
@@ -165,3 +167,4 @@ window.addEventListener('load', function () {
     gessed.innerText = memoryGame.pairsGuessed;
   }
 });
+
