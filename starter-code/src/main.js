@@ -25,7 +25,8 @@ var cards = [
   { name: 'thor',            img: 'thor.jpg' }
 ];
 
-window.onload = function(){
+
+window.addEventListener('load', function(){
   var memoryGame = new MemoryGame(cards);
   var html = '';
   memoryGame.cards.forEach(function (pic) {
@@ -36,7 +37,9 @@ window.onload = function(){
   });
 
   // Add all the div's to the HTML
-  document.querySelector('#memory_board').innerHTML=html;
+  if (document.querySelector('#memory_board')) {
+    document.querySelector('#memory_board').innerHTML=html;
+  }
 
   // Bind the click event of each element to a function
   var back = document.querySelectorAll('.back');
@@ -46,6 +49,5 @@ window.onload = function(){
         console.log(backItem);
       });
     });
-}
-
+});
 
